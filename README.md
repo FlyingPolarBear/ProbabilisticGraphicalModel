@@ -1,4 +1,4 @@
-# HMM
+# 隐马尔可夫模型（HMM）
 the code of Hidden Markov Model
 
 使用python+numpy编写的隐马尔可夫模型（HHM）程序，包含了HMM的概率计算（Evaluation)问题，学习（Learning）问题和预测（Decoding）问题。
