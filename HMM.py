@@ -44,7 +44,7 @@ class HMM():
         self.Beta()
         self.gamma = np.zeros([self.T, self.N])
         for t in range(self.T):
-            denominator = np.sum(self.alpha[t]*self.beta[t])
+            denominator = np.dot(self.alpha[t].T,self.beta[t])
             for i in range(self.N):
                 self.gamma[t][i] = self.alpha[t][i]*self.beta[t][i]/denominator
 
@@ -69,7 +69,7 @@ class HMM():
     def Backward(self, A, B, pi, O):
         self.ModelInit(A, B, pi, O)
         self.Beta()
-        self.P = np.sum(self.pi*B[:, O[0]]*self.beta[0])  # 终止
+        self.P = np.dot(self.pi*B[:, O[0]],self.beta[0])  # 终止
         print("Backward P(O|lamda) =", self.P)
 
     def Baum_Welch(self, epoch):
