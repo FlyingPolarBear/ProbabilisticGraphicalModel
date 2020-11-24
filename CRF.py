@@ -2,6 +2,7 @@ import numpy as np
 
 '''
 序列长度为T，取值数为N
+lamda: TxNxN | mu: TxN 
 概率计算时增加strat->y1的连接
 '''
 
